@@ -12,11 +12,12 @@ Sliders task
 
     <canvas id="canvas" class="m-2"></canvas>
 
-    {% if player.id_in_group == 1 %}
-        <p>Spieler 1 Nachricht: {{ player.received_message }}</p>
-    {% elif player.id_in_group == 2 %}
-        <p>Spieler 2 Nachricht: {{ player.received_message }}</p>
-    {% endif %}
+    <!--{ if player.id_in_group == 1 }
+          <p>Spieler 1 Nachricht: { player.received_message(nachricht:{'message': 'Hinter dem Gegner'}) }</p>
+        { elif player.id_in_group == 2 }
+            <p>Spieler 2 Nachricht: { player.received_message(nachricht:{'message': 'Hinter dem Gegner'}) }</p>
+        { endif }
+    -->
 
 </div>
 

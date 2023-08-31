@@ -39,15 +39,15 @@ def creating_session(subsession: Subsession):
 
 class Group(BaseGroup):
 
-    def send_message(self, sender_id, message):
+    def send_message(self, sender_id, nachricht):
         if sender_id == 1:
-            self.player1_message = message
+            self.player1_message = nachricht
         elif sender_id == 2:
-            self.player2_message = message
+            self.player2_message = nachricht
 
         self.group_send(
             f"player{sender_id}",
-            {"type": "received_message", "message": message}
+            {"type": "received_message", "message": nachricht}
         )
 
 
@@ -64,9 +64,9 @@ class Player(BasePlayer):
 
     current_score = models.IntegerField(initial=0)
 
-    def received_message(self, message):
+    def receive_message(self, nachricht):
         # Hier kann der empfangene Nachrichteninhalt verarbeitet werden
-        self.received_message = message['message']
+        self.received_message = nachricht['message']
 
 
 # puzzle-specific stuff
@@ -162,7 +162,7 @@ def handle_response(puzzle, slider, value):
     puzzle.is_solved = puzzle.num_correct == puzzle.num_sliders
 
 
-def play_game(player: Player, message: dict):
+def play_game(player: Player, message: dict, nachricht=models.StringField()):
     """Main game workflow
     Implemented as reactive scheme: receive message from browser, react, respond.
 
@@ -233,9 +233,9 @@ def play_game(player: Player, message: dict):
         slider.attempts += 1
         player.num_correct = puzzle.num_correct
 
-        message_type = message['type']
+        nachricht_type = nachricht['type']
 
-        if message_type == "value":
+        if nachricht_type == "value":
             if player.id_in_group == 1:
                 player.group.player1_message = "Hinter dem Gegner"
                 player.group.send_message(player.id_in_group, "Hinter dem Gegner")
@@ -252,6 +252,7 @@ def play_game(player: Player, message: dict):
         opponent_score = opponent.current_score
         if player.current_score < opponent_score:
             player.group.send_message(player.id_in_group, "Hinter dem Gegner")
+            player.receive_message(player.id_in_group, "Hinter dem Gegner")
 
         p = get_progress(player)
         return {
