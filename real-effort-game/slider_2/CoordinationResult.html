@@ -1,0 +1,20 @@
+{{ block styles }}
+<link href="{{ static 'global/css/style.css' }}" rel="stylesheet" type="text/css"/>
+{{ endblock }}
+
+{{ block title }}
+    Your Decision
+{{ endblock }}
+
+{{ block content }}
+    <h6 class="text-center mb-3">
+        You have made your decision. You decision is {{ decision }} <br>
+    </h6>
+    
+    {{ next_button }}
+
+
+<!--    <p class="text-center">-->
+<!--        <button class="otree-btn-next btn btn-primary">Continua</button>-->
+<!--    </p>-->
+{{ endblock }}

@@ -1,0 +1,18 @@
+{{ block styles }}
+<link href="{{ static 'global/css/style.css' }}" rel="stylesheet" type="text/css"/>
+{{ endblock }}
+
+{{ block title }}
+    End of the Questionnaire
+{{ endblock }}
+
+{{ block content }}
+
+<h6>Your payment</h6>
+<p>
+    Thank you for completing the questionnaire. Your payment is {{ participant.svopayoff }} tokens. Please hit the "Next" button to go to your final payment.
+</p>
+
+<button class="otree-btn-next btn btn-primary next-button otree-next-button">Next</button>
+
+{{ endblock }}

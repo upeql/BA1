@@ -1,0 +1,29 @@
+<script>
+window.Papercups = {
+  config: {
+    accountId: "b6dc6c35-d48b-44d7-b059-d3a89b08abaf",
+    title: "Welcome",
+    subtitle: "If you have any question, contact us in the chat window below 😊",
+    primaryColor: "#1890ff",
+    greeting: "",
+    awayMessage: "",
+    newMessagePlaceholder: "Start typing...",
+    showAgentAvailability: false,
+    agentAvailableText: "We're online right now!",
+    agentUnavailableText: "We're away at the moment.",
+    requireEmailUpfront: false,
+    iconVariant: "outlined",
+    baseUrl: "https://chat-online-experiment.herokuapp.com",
+        customer: {
+      name: '{{participant.label}}',
+      external_id: '{{participant.label}}',
+    }
+  },
+};
+</script>
+<script
+type="text/javascript"
+async
+defer
+src="https://chat-online-experiment.herokuapp.com/widget.js"
+></script>

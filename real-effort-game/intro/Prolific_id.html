@@ -1,0 +1,18 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Prolific ID
+{% endblock %}
+
+{% block content %}
+    <p>
+        Please insert your Prolific ID below:
+    </p>
+    {% formfields %}
+
+    Please note that you can only participate in the game when you can <b>complete at least 5 sliders</b> each round. <br>
+    When you click on the "Next" button, you will enter a screening session that lets you practice the slider task. If you fail to complete at least 5 sliders, you will be <b>DROPPED OUT</b> of the experiment. <br>
+    {% next_button %}
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{{ block styles }}
+<link href="{{ static 'global/css/style.css' }}" rel="stylesheet" type="text/css"/>
+{{ endblock }}
+
+{{ block title }}
+First Round
+{{ endblock }}
+
+{{ block content }}
+
+<p>
+      Welcome to the slider tasks. <br>
+      There are 4 people in your group doing slider tasks. You have 2 rounds of slider tasks to complete. <br>
+      In each round, you need to complete as many sliders as you can in <b>30 seconds</b> to earn wages (tokens). <br>
+      For each round, <span style="color:red"> YOU MUST COMPLETE AT LEAST 5 SLIDERS  </span> to be paid. Otherwise your response will be <span style="color:red"> REJECTED </span> and you <span style="color:red"> WILL NOT RECEIVE ANY PAYMENT </span>.<br>
+      <span style="color:red"> {{ treatment1 }} </span><br>
+</p>
+ <br>
+ <u><h6> {{ lottery0 }} </h6></u>
+     <b> {{ lottery1 }}  </b><br>
+     <b> {{ lottery2 }}  </b><br>
+ <br>
+  <u><h6> Wage Systems </h6></u>
+<ul>
+  <li>
+    There are two potential wage systems. There is a <b>downward-sloping system</b>, which means that for each additional slider you complete, you earn <span style="color:red"> 10% less </span> than the previous slider.
+  </li>
+  <li>
+    There is another potential wage system: <b>upward-sloping</b>. It means that for each additional slider you complete, you earn <span style="color:red"> 10% more </span> than the previous slider.
+  </li>
+  <li>
+    <b> You are currently in the <b>downward-sloping system</b>. Your current per slider wage is <span style="color:red"> 5 tokens per slider </span>. It will drop with each additional slider. </b>
+  </li>
+  </ul>
+ <br>
+<br>
+  <h6> From the moment you click on "Start", you will start your first round of slider tasks. You will have 30 seconds to complete all sliders.
+  </h6>
+
+<p>
+    <button class="otree-btn-next btn btn-primary">Start</button>
+</p>
+
+{{ endblock }}

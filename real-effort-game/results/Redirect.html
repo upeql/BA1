@@ -1,0 +1,17 @@
+{{ block styles }}
+<link href="{{ static 'global/css/style.css' }}" rel="stylesheet" type="text/css"/>
+{{ endblock }}
+
+{{ block title }}
+    End of the experiment
+{{ endblock }}
+
+{{ block content }}
+
+<h6>Complete the study</h6>
+<p>
+  Click <a href="{{ session.prolific_completion_url }}">here</a>
+              to complete the study.
+</p>
+
+{{ endblock }}

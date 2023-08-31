@@ -1,0 +1,195 @@
+{% block styles %}
+<style type="text/css">
+    .slidecontainer {
+        width: 100%;
+    }
+
+    span {
+        display: inline-block;
+        width: 15%;
+        text-align: left;
+
+    }
+
+    .slider {
+        -webkit-appearance: none;
+        width: 85%;
+        height: 25px;
+        background: #d3d3d3;
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: .2s;
+        position: relative;
+        margin-left: 70px;
+        margin-right: 50px;
+
+    }
+
+    .slider:hover {
+        opacity: 1;
+    }
+
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        background: #000000;
+        cursor: pointer;
+    }
+
+    .slider::-moz-range-thumb {
+        width: 25px;
+        height: 25px;
+        background: #04AA6D;
+        cursor: pointer;
+    }
+
+    datalist {
+        display: flex;
+        justify-content: space-between;
+        color: black;
+        width: 85%;
+        margin-left: 70px;
+        margin-right: 50px;
+
+
+    }
+</style>
+
+<link href="{{ static 'global/css/style.css' }}" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{{ block title }}
+Post-game questionnaire
+{{ endblock }}
+
+
+{{ block content }}
+
+<p>
+  In this questionnaire, you are going to <b>earn some extra tokens</b>. You are randomly paired with another person. Your identities will remain mutually anonymous. <br>
+  The two of you are given 6 extra tokens. <br>
+  We ask you to make decisions regarding the allocation of <b>EACH of the 6 extra tokens</b> between you and the other person. <br>
+
+    <br>
+    At the end of the questionnaire, one person from each pair will be chosen at random and their decisions will be applied. This will determine the extra earnings you both receive at this stage. <br>
+    In other words, if you are selected, your choices will determine the extra earnings that both you and the other person will receive. <br>
+    If you are not selected, your extra earnings will depend on the other person's choice. <br>
+    <br>
+    For each of the 6 "decision" below, please indicate how you intend to allocate the <b>PERCENTAGE OF</b> 1 token between you ("You") and each other person ("Other") by marking the respective position along the cursor. <br>
+    Your earnings of this stage will be <b>the SUM of tokens allocated to you in each of the 6 "decision"s</b>. <br>
+</p>
+
+<div>
+    <center><strong>Decision 1</strong></center>
+    <span>You:</span>
+    <datalist>
+        {{for p in C11}}
+        <option value={{p}} label={{p}}></option>
+        {{endfor}}
+    </datalist>
+    <input type="range" name="q1" min="1" max="9" step="1" class="slider">
+    <datalist>
+        {{for p in C21}}
+        <option value={{p}} label={{p}}></option>
+        {{endfor}}
+    </datalist>
+    <span>Other:</span>
+    <br><br>
+</div>
+<div>
+    <center><strong>Decision 2</strong></center>
+    <span>You:</span>
+    <datalist>
+        {{for p in C12}}
+        <option value={{p}} label={{p}}></option>
+        {{endfor}}
+    </datalist>
+    <input type="range" name="q2" min="1" max="9" step="1" class="slider">
+    <datalist>
+        {{for p in C22}}
+        <option value={{p}} label={{p}}></option>
+        {{endfor}}
+    </datalist>
+    <span>Other:</span>
+    <br><br>
+</div>
+
+<div>
+    <center><strong>Decision 3</strong></center>
+    <span>You:</span>
+    <datalist>
+        {{for p in C13}}
+        <option value={{p}} label={{p}}></option>
+        {{endfor}}
+    </datalist>
+    <input type="range" name="q3" min="1" max="9" step="1" class="slider">
+    <datalist>
+        {{for p in C23}}
+        <option value={{p}} label={{p}}></option>
+        {{endfor}}
+    </datalist>
+    <span>Other:</span>
+    <br><br>
+</div>
+
+<div>
+    <center><strong>Decision 4</strong></center>
+    <span>You:</span>
+    <datalist>
+        {{for p in C14}}
+        <option value={{p}} label={{p}}></option>
+        {{endfor}}
+    </datalist>
+    <input type="range" name="q4" min="1" max="9" step="1" class="slider">
+    <datalist>
+        {{for p in C24}}
+        <option value={{p}} label={{p}}></option>
+        {{endfor}}
+    </datalist>
+    <span>Other:</span>
+    <br><br>
+</div>
+
+<div>
+    <center><strong>Decision 5</strong></center>
+    <span>You:</span>
+    <datalist>
+        {{for p in C15}}
+        <option value={{p}} label={{p}}></option>
+        {{endfor}}
+    </datalist>
+    <input type="range" name="q5" min="1" max="9" step="1" class="slider">
+    <datalist>
+        {{for p in C25}}
+        <option value={{p}} label={{p}}></option>
+        {{endfor}}
+    </datalist>
+    <span>Other:</span>
+    <br><br>
+</div>
+
+<div>
+    <center><strong>Decision 6</strong></center>
+    <span>You:</span>
+    <datalist>
+        {{for p in C16}}
+        <option value={{p}} label={{p}}></option>
+        {{endfor}}
+    </datalist>
+    <input type="range" name="q6" min="1" max="9" step="1" class="slider">
+    <datalist>
+        {{for p in C26}}
+        <option value={{p}} label={{p}}></option>
+        {{endfor}}
+    </datalist>
+    <span>Other:</span>
+    <br><br>
+</div>
+
+
+<button class="otree-btn-next btn btn-primary next-button otree-next-button">Confirm your choices</button>
+
+
+{{ endblock  }}

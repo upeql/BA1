@@ -1,0 +1,20 @@
+{{ block styles }}
+<link href="{{ static 'global/css/style.css' }}" rel="stylesheet" type="text/css"/>
+{{ endblock }}
+
+{{ block title }}
+    End of the experiment
+{{ endblock }}
+
+{{ block content }}
+
+<h6>Your payment</h6>
+<p>
+    Congratulations! You have completed all tasks. Your final bonus is {{ payoff }} dollars plus the completion fee. <br>
+    You will receive the {{ payoff }} dollars as a bonus payment shortly afterwards.
+</p>
+
+  Please hit the "Next" button to complete the study.
+
+{{ next_button }}
+{{ endblock }}

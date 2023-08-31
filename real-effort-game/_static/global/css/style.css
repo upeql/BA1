@@ -1,0 +1,26 @@
+/****************
+General
+****************/
+
+.otree-title {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #cccccc;
+}
+
+.otree-btn-next {
+    margin: 1.5rem 0 1rem 0;
+}
+
+h6 {
+    font-weight: bold;
+}
+
+.no-wrap {
+    white-space: nowrap;
+}
+
+input.form-control[type=number] {
+  max-width: 80px;
+}
+
+#income-declaration-feedback {}
